@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exponent Number</title>
+</head>
+<body>
+    <h2>Factorial of a Number</h2>
+    <form action="" method="post">
+        Enter Number : <input type="number" name="num1"><br>
+        <input type="submit" value="Result">
+        <input type="reset">
+    </form>
+    <?php
+    
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $num1 = $_POST["num1"];
+
+    function Factorial($num1) 
+    {
+        $p = 1;
+        while ($num1 > 0) 
+        {
+            $p = $num1 * $p;
+            $num1--;
+        }
+        return $p;
+    }
+    echo "<b>$num1 factorial is: " . Factorial($num1) . "</b>";
+}
+    ?>
+</body>
+</html>
